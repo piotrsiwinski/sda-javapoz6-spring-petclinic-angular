@@ -35,6 +35,8 @@ export class OwnerListComponent implements OnInit {
       firstname: 'Piotr',
       lastname: 'Nowakowski',
       address: {
+        city: 'Poznań',
+        street: 'Półwiejska 42',
         country: 'Poland'
       }
     };
