@@ -3,8 +3,8 @@ import {Pet} from '../pet/pet';
 
 export interface Owner {
   id: number;
-  firstName: string;
-  lastName: string;
+  firstname: string;
+  lastname: string;
   address: Address;
   pets: Pet[];
 }

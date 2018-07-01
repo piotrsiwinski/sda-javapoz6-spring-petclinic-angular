@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Owner} from '../owner';
+import {OwnerService} from '../owner.service';
 
 @Component({
   selector: 'app-owner-list',
@@ -7,37 +8,41 @@ import {Owner} from '../owner';
   styleUrls: ['./owner-list.component.css']
 })
 export class OwnerListComponent implements OnInit {
-  owners: Owner[] = [
-    {
-      id: 1,
-      firstName: 'Jan',
-      lastName: 'Kowalski',
-      address: {
-        street: 'Półwiejska 42',
-        city: 'Poznań',
-        postalcode: '61-229',
-        country: 'Poland'
-      },
-      pets: [{id: 1, name: 'Azor', birthDate: '2017-05-12'}]
-    } as Owner,
-    {
-      id: 2,
-      firstName: 'Adam',
-      lastName: 'Nowak',
-      address: {
-        street: 'Wrocławska 42',
-        city: 'Poznań',
-        postalcode: '61-230',
-        country: 'Poland'
-      },
-      pets: [{id: 2, name: 'Puszek', birthDate: '2018-05-12'}]
-    }
-  ];
+  owners: Owner[];
 
+  // referencja do wybranego ownera
+  selectedOwner: Owner;
 
-  constructor() {
+  constructor(private ownerService: OwnerService) {
   }
 
   ngOnInit(): void {
+    this.ownerService.getOwners().subscribe(
+      owners => {
+        console.log(JSON.stringify(owners));
+        this.owners = owners;
+      },
+      error => console.log(JSON.stringify(error))
+    );
+  }
+
+  onOwnerClicked(owner: Owner) {
+    this.selectedOwner = owner;
+  }
+
+  createNewOwner() {
+    const owner = {
+      firstname: 'Piotr',
+      lastname: 'Nowakowski',
+      address: {
+        country: 'Poland'
+      }
+    };
+    this.ownerService.createOwner(owner)
+    .subscribe(d => {
+        console.log(JSON.stringify(d));
+      },
+      err => console.log(JSON.stringify(err)));
+
   }
 }
