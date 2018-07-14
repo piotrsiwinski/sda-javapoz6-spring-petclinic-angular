@@ -8,8 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { ErrorComponent } from './error/error.component';
 import { OwnerListComponent } from './owner/owner-list/owner-list.component';
 import { OwnerDetailsComponent } from './owner/owner-details/owner-details.component';
-import {OwnerService} from "./owner/owner.service";
-import {HttpClientModule} from "@angular/common/http";
+import {OwnerService} from './owner/owner.service';
+import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './auth/login/login.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import {HttpClientModule} from "@angular/common/http";
     ContactComponent,
     ErrorComponent,
     OwnerListComponent,
-    OwnerDetailsComponent
+    OwnerDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [OwnerService],
   bootstrap: [AppComponent]
