@@ -12,7 +12,7 @@ import {OwnerService} from './owner/owner.service';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { RegistrationComponent } from './auth/registration/registration.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
     OwnerListComponent,
     OwnerDetailsComponent,
     LoginComponent,
-    RegistrationComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
