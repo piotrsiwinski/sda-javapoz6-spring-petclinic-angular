@@ -11,7 +11,7 @@ import { OwnerDetailsComponent } from './owner/owner-details/owner-details.compo
 import {OwnerService} from './owner/owner.service';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [OwnerService],
   bootstrap: [AppComponent]
