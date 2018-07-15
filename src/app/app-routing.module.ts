@@ -5,12 +5,14 @@ import {ContactComponent} from './home/contact/contact.component';
 import {ErrorComponent} from './error/error.component';
 import {OwnerListComponent} from './owner/owner-list/owner-list.component';
 import {LoginComponent} from './auth/login/login.component';
+import {RegisterComponent} from './auth/register/register.component';
 
 export const appRoutes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'owners', component: OwnerListComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: '**', component: ErrorComponent}
 ];
 
