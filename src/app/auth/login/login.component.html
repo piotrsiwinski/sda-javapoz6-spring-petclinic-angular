@@ -7,7 +7,7 @@
       <label for="email" class="col-sm-2 col-form-label" required>Email</label>
       <div class="col-sm-6">
         <input type="text" class="form-control" placeholder="Email"
-               id="email" name="email" [(ngModel)]="loginForm.login"
+               id="email" name="email"
                formControlName="email"
                required>
       </div>
@@ -17,7 +17,6 @@
       <label for="password" class="col-sm-2 col-form-label">Password</label>
       <div class="col-sm-4">
         <input type="password" class="form-control" id="password" name="password" placeholder="Password"
-               [(ngModel)]="loginForm.password"
                formControlName="password"
                required>
       </div>
@@ -25,10 +24,10 @@
 
     <div class="form-group row">
       <div class="offset-sm-2">
-        <button type="submit" class="btn btn-primary btn-lg" [disabled] = "!myform.valid" (click)="sendForm()">Log in</button>
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="!myform.valid" (click)="sendForm()">Log in
+        </button>
       </div>
     </div>
-    <!--<pre>{{myform.value | json}}</pre>-->
   </form>
 </div>
 
