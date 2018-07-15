@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {LoginService} from "./login.service";
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class LoginComponent implements OnInit {
   myform: FormGroup;
 
-  constructor() {
+  constructor(private loginService: LoginService) {
   }
 
   ngOnInit() {
@@ -21,7 +22,14 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  sendForm() {
-    //todo Send data to backend
+  sendLoginForm() {
+    this.loginService
+      .doLogin(this.myform.controls['email'].value,this.myform.controls['password'].value)
+      .subscribe((resp) => {
+        console.log('ok'),
+          (err) => {
+          console.log(JSON.stringify(err));
+          }
+      });
   }
 }
