@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {LoginService} from "./login.service";
+import {LoginService} from './login.service';
+import {Router} from '@angular/router';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +10,13 @@ import {LoginService} from "./login.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  myform: FormGroup;
+  loginForm: FormGroup;
 
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private router: Router, private authService: AuthService) {
   }
 
   ngOnInit() {
-    this.myform = new FormGroup({
+    this.loginForm = new FormGroup({
       email: new FormControl('', Validators.compose([
         Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$')
       ])),
@@ -24,12 +26,12 @@ export class LoginComponent implements OnInit {
 
   sendLoginForm() {
     this.loginService
-      .doLogin(this.myform.controls['email'].value,this.myform.controls['password'].value)
+      .doLogin(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe((resp) => {
-        console.log('ok'),
-          (err) => {
-          console.log(JSON.stringify(err));
-          }
-      });
+          this.authService.setUserLogged(true);
+          this.router.navigate(['/']);
+        },
+        (err) => console.log(JSON.stringify(err))
+      );
   }
 }

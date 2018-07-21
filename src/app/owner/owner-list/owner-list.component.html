@@ -2,10 +2,10 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <td>Imie</td>
-      <td>Nazwisko</td>
-      <td>Adres</td>
-      <td>Operacje</td>
+      <td>Name</td>
+      <td>Surname</td>
+      <td>Address</td>
+      <td>Actions</td>
     </tr>
   </thead>
   <tbody>
@@ -21,4 +21,4 @@
 </table>
 
 <app-owner-details [owner]="selectedOwner"></app-owner-details>
-<button (click)="createNewOwner()">Create test user</button>
+<button (click)="createNewOwner()" routerLink="/createowner">Create owner</button>

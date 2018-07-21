@@ -6,6 +6,7 @@ import {ErrorComponent} from './error/error.component';
 import {OwnerListComponent} from './owner/owner-list/owner-list.component';
 import {LoginComponent} from './auth/login/login.component';
 import {RegisterComponent} from './auth/register/register.component';
+import {OwnerCreateComponent} from "./owner/owner-create/owner-create.component";
 
 export const appRoutes: Routes = [
   {path: '', component: IndexComponent},
@@ -13,6 +14,7 @@ export const appRoutes: Routes = [
   {path: 'owners', component: OwnerListComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'createowner', component: OwnerCreateComponent},
   {path: '**', component: ErrorComponent}
 ];
 
