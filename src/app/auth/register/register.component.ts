@@ -33,7 +33,6 @@ export class RegisterComponent implements OnInit {
   sendForm() {
     this.registerService.register(this.myform.value)
       .subscribe(d => {
-          console.log('user resister success');
           this.router.navigate(['/']);
         },
         err => console.log(JSON.stringify(err)));
