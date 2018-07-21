@@ -12,6 +12,7 @@ import {Router} from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   myform: FormGroup;
+  hasErrors = false;
 
   constructor(private registerService: RegisterService, private router: Router) {
   }
@@ -33,9 +34,9 @@ export class RegisterComponent implements OnInit {
   sendForm() {
     this.registerService.register(this.myform.value)
       .subscribe(d => {
-          this.router.navigate(['/']);
-        },
-        err => console.log(JSON.stringify(err)));
-
+        this.router.navigate(['/']);
+      }, err => {
+        this.hasErrors = true;
+      });
   }
 }

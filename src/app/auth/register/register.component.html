@@ -1,6 +1,11 @@
 <h1>Register</h1>
 <br>
 <div class="container">
+  <div *ngIf="hasErrors">
+    <p class="text-danger">
+      <b>E-mail already exist in database!</b>
+    </p>
+  </div>
   <form [formGroup]="myform">
 
     <div class="form-group row">
