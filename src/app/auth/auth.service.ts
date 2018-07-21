@@ -9,11 +9,11 @@ export class AuthService {
   constructor() { }
 
 
-  public isUserLogged(): Boolean {
+  public isUserLogged(): boolean {
     return this._isUserLoggedIn;
   }
 
-  public setUserLogged(isLoggedIn: Boolean) {
+  public setUserLogged(isLoggedIn: boolean) {
     this._isUserLoggedIn = isLoggedIn;
   }
 }
