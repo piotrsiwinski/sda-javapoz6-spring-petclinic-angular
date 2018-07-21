@@ -21,5 +21,12 @@ export class LoginService {
     return this.http.post('http://localhost:9000/api/v1/authenticate', postData, httpOptions);
   }
 
+  doLogout() {
+    const httpOptions = {
+      withCredentials: true
+    };
+    return this.http.post('http://localhost:9000/api/v1/logout', httpOptions);
+  }
+
 }
 
