@@ -31,7 +31,6 @@ export class RegisterComponent implements OnInit {
   }
 
   sendForm() {
-    console.log(JSON.stringify(this.myform.value));
     this.registerService.register(this.myform.value)
       .subscribe(d => {
           console.log('user resister success');
