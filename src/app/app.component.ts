@@ -1,5 +1,6 @@
 import {Component, DoCheck, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {AuthService} from './auth/auth.service';
+import {LoginService} from './auth/login/login.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import {AuthService} from './auth/auth.service';
 export class AppComponent implements OnInit, OnChanges, DoCheck  {
   isLogged = true;
 
-  constructor (private authService: AuthService) {
+  constructor (private authService: AuthService, private loginService: LoginService) {
   }
 
   ngOnInit() {
@@ -24,5 +25,12 @@ export class AppComponent implements OnInit, OnChanges, DoCheck  {
     this.isLogged = this.authService.isUserLogged();
   }
 
+  sendLogoutForm() {
+      this.loginService
+        .doLogout()
+        .subscribe((resp) => console.log(`user sie wylogowal`),
+          (err) => console.log(JSON.stringify(err))
+        );
+  }
 }
 
