@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/index';
-import {Owner} from './owner';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 
@@ -13,11 +12,12 @@ export class OwnerService {
   }
 
   public getOwners(): Observable<any> {
-    return this.http.get('http://localhost:9000/api/v1/owners');
+    return this.http.get('http://localhost:9000/api/v1/owners', {withCredentials: true});
   }
 
   createOwner(owner) {
     const httpOptions = {
+      withCredentials: true,
       headers: new HttpHeaders({
         'content-type': 'application/json'
       })
