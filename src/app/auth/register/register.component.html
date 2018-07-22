@@ -2,8 +2,8 @@
 <br>
 <div class="container">
   <div *ngIf="hasErrors">
-    <p class="text-danger">
-      <b>E-mail already exist in database!</b>
+    <p class="alert alert-danger" role="alert">
+      <b>E-mail already registered!</b>
     </p>
   </div>
   <form [formGroup]="myform">
