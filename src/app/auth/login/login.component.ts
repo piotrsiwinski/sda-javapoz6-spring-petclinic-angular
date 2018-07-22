@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from './login.service';
 import {Router} from '@angular/router';
 import {AuthService} from '../auth.service';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,12 @@ import {AuthService} from '../auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  hasErrors = false;
 
-  constructor(private loginService: LoginService, private router: Router, private authService: AuthService) {
+  constructor(private loginService: LoginService,
+              private router: Router,
+              private authService: AuthService,
+              private cookieService: CookieService) {
   }
 
   ngOnInit() {
@@ -28,10 +33,10 @@ export class LoginComponent implements OnInit {
     this.loginService
       .doLogin(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe((resp) => {
-        this.authService.setUserLogged(true);
+        this.cookieService.set('USER_LOGGED', 'TRUE');
         this.router.navigate(['/']);
         },
-          (err) => console.log(JSON.stringify(err))
+          (err) => this.hasErrors = true
       );
   }
 }

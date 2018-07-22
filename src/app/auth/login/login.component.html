@@ -2,6 +2,10 @@
 <br>
 
 <div class="container">
+  <div *ngIf="hasErrors" class="alert alert-danger" role="alert">
+    Login failed. Email or password not correct or account not activated.
+  </div>
+
   <form [formGroup]="loginForm">
     <div class="form-group row">
       <label for="email" class="col-sm-2 col-form-label" required>Email</label>
@@ -24,7 +28,8 @@
 
     <div class="form-group row">
       <div class="offset-sm-2">
-        <button type="submit" class="btn btn-primary btn-lg" [disabled]="!loginForm.valid" (click)="sendLoginForm()">Log in
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="!loginForm.valid" (click)="sendLoginForm()">Log
+          in
         </button>
       </div>
     </div>
