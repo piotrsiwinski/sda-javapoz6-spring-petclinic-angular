@@ -10,20 +10,26 @@ import {Router} from '@angular/router';
 })
 export class AppComponent implements OnInit, OnChanges, DoCheck  {
   isLogged = true;
+  loggedUser;
 
-  constructor (private authService: AuthService, private loginService: LoginService, private router: Router) {
+  constructor (private authService: AuthService,
+               private loginService: LoginService,
+               private router: Router) {
   }
 
   ngOnInit() {
     this.isLogged = this.authService.isUserLogged();
-    }
+    this.getLoggedUser();
+  }
 
   ngDoCheck(): void {
     this.isLogged = this.authService.isUserLogged();
+    this.getLoggedUser();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.isLogged = this.authService.isUserLogged();
+    this.getLoggedUser();
   }
 
   sendLogoutForm() {
@@ -32,6 +38,12 @@ export class AppComponent implements OnInit, OnChanges, DoCheck  {
         .subscribe((resp) =>  this.router.navigate(['/']),
           (err) => console.log(JSON.stringify(err))
         );
+  }
+
+  getLoggedUser() {
+    if (this.isLogged) {
+      this.loggedUser = this.authService.getLoggedUserData();
+    }
   }
 }
 

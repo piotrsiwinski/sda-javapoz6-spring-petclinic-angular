@@ -8,6 +8,7 @@ import {LoginComponent} from './auth/login/login.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {OurpetsComponent} from './ourpets/ourpets.component';
 import {AuthGuard} from './auth/auth.guard';
+import {UserComponent} from "./user/user.component";
 
 export const appRoutes: Routes = [
   {path: '', component: IndexComponent},
@@ -17,6 +18,7 @@ export const appRoutes: Routes = [
   {path: 'ourpets', component: OurpetsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'user', component: UserComponent},
   {path: '**', component: ErrorComponent}
 ];
 
