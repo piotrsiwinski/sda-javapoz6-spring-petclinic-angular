@@ -17,8 +17,8 @@ export class OwnerCreateComponent implements OnInit {
 
   ngOnInit() {
     this.myform = new FormGroup({
-      firstName: new FormControl(),
-      lastName: new FormControl(),
+      firstname: new FormControl(),
+      lastname: new FormControl(),
       city: new FormControl(),
       street: new FormControl(),
       country: new FormControl()
@@ -26,13 +26,20 @@ export class OwnerCreateComponent implements OnInit {
   }
 
   createNewOwner(myform) {
-    // console.log(JSON.stringify(this.myform.value))
-    this.ownerService.createOwner(this.myform.value).subscribe(d => {
+    const formData = this.myform.value;
+    const requestData = {
+      firstname: formData.firstname,
+      lastname: formData.lastname,
+      address: {
+        street: formData.street,
+        city: formData.city,
+        country: formData.country
+      }
+    };
+    this.ownerService.createOwner(requestData).subscribe(d => {
         console.log(JSON.stringify(d));
+        this.router.navigate(['/owners']);
       },
       err => console.log(JSON.stringify(err)));
-
-    this.router.navigate(['/owners']);
-
   }
 }

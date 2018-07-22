@@ -9,8 +9,6 @@ import {OwnerService} from '../owner.service';
 })
 export class OwnerListComponent implements OnInit {
   owners: Owner[];
-
-  // referencja do wybranego ownera
   selectedOwner: Owner;
 
   constructor(private ownerService: OwnerService) {
@@ -19,7 +17,6 @@ export class OwnerListComponent implements OnInit {
   ngOnInit(): void {
     this.ownerService.getOwners().subscribe(
       owners => {
-        console.log(JSON.stringify(owners));
         this.owners = owners;
       },
       error => console.log(JSON.stringify(error))
@@ -30,21 +27,4 @@ export class OwnerListComponent implements OnInit {
     this.selectedOwner = owner;
   }
 
-  createNewOwner() {
-    const owner = {
-      firstname: 'Piotr',
-      lastname: 'Nowakowski',
-      address: {
-        city: 'Poznań',
-        street: 'Półwiejska 42',
-        country: 'Poland'
-      }
-    };
-    this.ownerService.createOwner(owner)
-    .subscribe(d => {
-        console.log(JSON.stringify(d));
-      },
-      err => console.log(JSON.stringify(err)));
-
-  }
 }

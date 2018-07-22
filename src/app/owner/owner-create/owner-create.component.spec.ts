@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OwnerCreateComponent } from './owner-create.component';
 
-describe('OwnerCreateComponent', () => {
+describe('AuthService', () => {
   let component: OwnerCreateComponent;
   let fixture: ComponentFixture<OwnerCreateComponent>;
 
