@@ -3,6 +3,9 @@
   <span class="size">  <img src="assets/img/pawlogo-login.png"> Welcome to PetClinic </span>
   <br>
   <br>
+  <div *ngIf="hasErrors" class="alert alert-danger" role="alert">
+    Login failed. Email or password not correct or account not activated.
+  </div>
   <form [formGroup]="loginForm" class="form-horizontal">
     <div class="form-group">
       <label for="email" class="control-label col-sm-2" required>Email</label>
@@ -25,7 +28,7 @@
     <br>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-6">
-        <button type="submit" class="btn btn-lg btn-warning" [disabled]="!loginForm.valid"
+        <button type="button" class="btn btn-lg btn-warning" [disabled]="!loginForm.valid"
                 (click)="sendLoginForm()">Sign in
         </button>
       </div>

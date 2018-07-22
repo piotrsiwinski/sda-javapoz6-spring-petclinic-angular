@@ -2,6 +2,11 @@
 <span class="size">  <img src="assets/img/pawlogo-login.png"> Register </span>
 <br>
 <div class="container">
+  <div *ngIf="hasErrors">
+    <p class="alert alert-danger" role="alert">
+      <b>E-mail already registered!</b>
+    </p>
+  </div>
   <form [formGroup]="myform">
 
     <div class="form-group row">

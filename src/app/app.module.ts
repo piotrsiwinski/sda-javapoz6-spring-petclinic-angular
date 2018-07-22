@@ -14,6 +14,9 @@ import { LoginComponent } from './auth/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './auth/register/register.component';
 import { OurpetsComponent } from './ourpets/ourpets.component';
+import { CookieService } from 'ngx-cookie-service';
+import {AuthService} from './auth/auth.service';
+import {AuthGuard} from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,7 @@ import { OurpetsComponent } from './ourpets/ourpets.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [OwnerService],
+  providers: [OwnerService, CookieService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
