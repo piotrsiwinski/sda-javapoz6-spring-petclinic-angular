@@ -1,4 +1,5 @@
-<h1>Register</h1>
+
+<span class="size">  <img src="assets/img/pawlogo-login.png"> Register </span>
 <br>
 <div class="container">
   <form [formGroup]="myform">
@@ -61,10 +62,11 @@
     <br>
     <div>
       <div>
-        <button type="button" class="btn btn-primary btn-lg" [disabled]="!myform.valid" (click)="sendForm()">Register
+        <button type="button" class="btn btn-lg btn-warning" [disabled]="!myform.valid" (click)="sendForm()">Register
         </button>
       </div>
     </div>
 
   </form>
 </div>
+
