@@ -1,11 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../../environments/environment.prod';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
+  private apiUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) {
   }
@@ -16,7 +18,7 @@ export class RegisterService {
         'content-type': 'application/json'
       })
     };
-    return this.http.post('http://localhost:9000/api/v1/register', newUser, httpOptions);
+    return this.http.post(`${this.apiUrl}/api/v1/register`, newUser, httpOptions);
   }
 
 }
