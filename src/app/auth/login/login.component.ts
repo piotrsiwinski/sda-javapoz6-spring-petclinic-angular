@@ -11,6 +11,7 @@ import {AuthService} from '../auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  hasErrors = false;
 
   constructor(private loginService: LoginService, private router: Router, private authService: AuthService) {
   }
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
         this.authService.setUserLogged(true);
         this.router.navigate(['/']);
         },
-          (err) => console.log(JSON.stringify(err))
+          (err) => this.hasErrors = true
       );
   }
 }
