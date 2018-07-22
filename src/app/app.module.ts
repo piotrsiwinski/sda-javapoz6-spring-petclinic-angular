@@ -17,6 +17,7 @@ import { OurpetsComponent } from './ourpets/ourpets.component';
 import { CookieService } from 'ngx-cookie-service';
 import {AuthService} from './auth/auth.service';
 import {AuthGuard} from './auth/auth.guard';
+import {OwnerCreateComponent} from './owner/owner-create/owner-create.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {AuthGuard} from './auth/auth.guard';
     OwnerDetailsComponent,
     LoginComponent,
     RegisterComponent,
-    OurpetsComponent
+    OurpetsComponent,
+    OwnerCreateComponent
   ],
   imports: [
     BrowserModule,

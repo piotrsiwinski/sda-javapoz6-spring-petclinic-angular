@@ -1,0 +1,54 @@
+<h1>Create new owner</h1>
+<br>
+<div class="container">
+  <form [formGroup]="myform">
+
+    <div class="form-group row">
+      <label for="firstname" class="col-sm-2 col-form-label" required>First Name:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control"
+               id="firstname" name="firstname" formControlName="firstname" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="lastname" class="col-sm-2 col-form-label" required>Last Name:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control"
+               id="lastname" name="lastname" formControlName="lastname" required>
+      </div>
+    </div>
+
+       <div class="form-group row">
+      <label for="city" class="col-sm-2 col-form-label" required>City:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control"
+               id="city" name="city" formControlName="city" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="street" class="col-sm-2 col-form-label" required>Street:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control"
+               id="street" name="street" formControlName="street" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="country" class="col-sm-2 col-form-label" required>Country:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control"
+               id="country" name="country" formControlName="country" required>
+      </div>
+    </div>
+    <br>
+    <div>
+      <div>
+        <button type="button" class="btn btn-primary btn-lg" (click)="createNewOwner()">Create owner
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>
