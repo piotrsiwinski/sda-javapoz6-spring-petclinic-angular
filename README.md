@@ -21,4 +21,4 @@ Run `ng serve --port PORT_NUMBER` to run development server on different port
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Deploy application
-Work in progress
+Run `ng build --prod --build-optimizer --base-href=/`

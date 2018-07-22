@@ -13,7 +13,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './auth/register/register.component';
-import { OwnerCreateComponent } from './owner/owner-create/owner-create.component';
+import { OurpetsComponent } from './ourpets/ourpets.component';
+import { CookieService } from 'ngx-cookie-service';
+import {AuthService} from './auth/auth.service';
+import {AuthGuard} from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,7 @@ import { OwnerCreateComponent } from './owner/owner-create/owner-create.componen
     OwnerDetailsComponent,
     LoginComponent,
     RegisterComponent,
-    OwnerCreateComponent
+    OurpetsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { OwnerCreateComponent } from './owner/owner-create/owner-create.componen
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [OwnerService],
+  providers: [OwnerService, CookieService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
