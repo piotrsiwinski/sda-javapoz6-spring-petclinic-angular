@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './auth/register/register.component';
+import { OurpetsComponent } from './ourpets/ourpets.component';
 import { CookieService } from 'ngx-cookie-service';
 import {AuthService} from './auth/auth.service';
 import {AuthGuard} from './auth/auth.guard';
@@ -26,7 +27,8 @@ import {AuthGuard} from './auth/auth.guard';
     OwnerListComponent,
     OwnerDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    OurpetsComponent
   ],
   imports: [
     BrowserModule,
