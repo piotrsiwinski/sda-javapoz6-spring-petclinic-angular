@@ -1,0 +1,10 @@
+.center-table {
+  display: table;
+  height: 20%;
+  width: 60%;
+  margin: auto;
+}
+.size {
+  font-size: 60px;
+
+}
