@@ -14,6 +14,9 @@ import { LoginComponent } from './auth/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './auth/register/register.component';
 import { CookieService } from 'ngx-cookie-service';
+import {AuthService} from './auth/auth.service';
+import {AuthGuard} from './auth/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,7 @@ import { CookieService } from 'ngx-cookie-service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [OwnerService, CookieService],
+  providers: [OwnerService, CookieService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
