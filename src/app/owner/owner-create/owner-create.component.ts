@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {OwnerService} from "../owner.service";
-import {Router} from "@angular/router";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {OwnerService} from '../owner.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-owner-create',
@@ -25,7 +25,7 @@ export class OwnerCreateComponent implements OnInit {
     });
   }
 
-  createNewOwner(myform) {
+  createNewOwner() {
     const formData = this.myform.value;
     const requestData = {
       firstname: formData.firstname,
