@@ -36,7 +36,7 @@ import { PetDetailsComponent } from './pet/pet-details/pet-details.component';
     UserComponent,
     OurpetsComponent,
     OwnerCreateComponent,
-    ActivateComponent
+    ActivateComponent,
     OwnerCreateComponent,
     PetDetailsComponent
   ],
