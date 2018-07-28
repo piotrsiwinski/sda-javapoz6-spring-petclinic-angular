@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Owner} from '../owner';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-owner-details',
@@ -10,8 +11,9 @@ export class OwnerDetailsComponent implements OnInit {
 
   @Input()
   owner: Owner;
+  showPetForm = false;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -19,5 +21,9 @@ export class OwnerDetailsComponent implements OnInit {
 
   onHideClick() {
     this.owner = null;
+  }
+
+  onAddNewPetClick() {
+    this.showPetForm = true;
   }
 }

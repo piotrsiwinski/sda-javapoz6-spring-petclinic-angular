@@ -24,4 +24,13 @@ export class OwnerService {
     };
     return this.http.post('http://localhost:9000/api/v1/owner', owner, httpOptions);
   }
+
+  public getUserData() {
+    // todo: call PetClinic api here
+    return {
+      firstName: 'Jan',
+      lastName: 'Kowalski',
+      email: 'kowalski@petclinic.com'
+    };
+  }
 }

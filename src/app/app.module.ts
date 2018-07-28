@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './auth/register/register.component';
+import { AddPetComponent } from './pet/add-pet/add-pet.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RegisterComponent } from './auth/register/register.component';
     OwnerListComponent,
     OwnerDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddPetComponent
   ],
   imports: [
     BrowserModule,

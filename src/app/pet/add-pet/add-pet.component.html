@@ -1,0 +1,56 @@
+<div *ngIf="owner">
+  <h1>Add new pet</h1>
+  <br>
+  <div class="container">
+
+    <form [formGroup]="myform">
+
+      <div class="form-group row">
+        <label for="owner" class="col-sm-2 col-form-label" required>Owner:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control"
+                 id="owner" name="owner" formControlName="owner" required value="{{owner.firstname}} {{owner.lastname}}"
+                 disabled="disabled">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="birthDate" class="col-sm-2 col-form-label" required>Pet birth date:</label>
+        <div class="col-sm-6">
+          <input type="date" class="form-control"
+                 id="birthDate" name="birthDate" formControlName="birthDate" required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label" required>Pet name:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control"
+                 id="name" name="name" formControlName="name" required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="petType" class="col-sm-2 col-form-label" required>Select pet type:</label>
+        <div class="col-sm-6">
+          <select class="form-control" id="petType" formControlName="petType">
+            <option>DOG</option>
+            <option>CAT</option>
+            <option>LIZZARD</option>
+            <option>SNAKE</option>
+            <option>BIRD</option>
+            <option>HAMSTER</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <button type="button" class="btn btn-primary btn-lg" (click)="sendForm()">Add pet
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
