@@ -9,6 +9,8 @@ import {RegisterComponent} from './auth/register/register.component';
 import {OurpetsComponent} from './ourpets/ourpets.component';
 import {AuthGuard} from './auth/auth.guard';
 import {UserComponent} from "./user/user.component";
+import {OwnerCreateComponent} from './owner/owner-create/owner-create.component';
+import {ActivateComponent} from './auth/activate/activate.component';
 
 export const appRoutes: Routes = [
   {path: '', component: IndexComponent},
@@ -19,6 +21,8 @@ export const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'user', component: UserComponent},
+  {path: 'createowner', component: OwnerCreateComponent},
+  {path: 'activate/:token', component: ActivateComponent},
   {path: '**', component: ErrorComponent}
 ];
 
