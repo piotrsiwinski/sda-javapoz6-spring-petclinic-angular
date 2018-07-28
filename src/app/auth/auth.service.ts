@@ -12,4 +12,13 @@ export class AuthService {
   public isUserLogged(): boolean {
     return this.cookieService.check('USER_LOGGED');
   }
+
+  public getLoggedUserData() {
+    // todo: call PetClinic api here
+    return {
+      firstName: 'Jan',
+      lastName: 'Kowalski',
+      email: 'kowalski@petclinic.com'
+    };
+  }
 }

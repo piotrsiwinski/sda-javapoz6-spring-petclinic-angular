@@ -17,7 +17,9 @@ import { OurpetsComponent } from './ourpets/ourpets.component';
 import { CookieService } from 'ngx-cookie-service';
 import {AuthService} from './auth/auth.service';
 import {AuthGuard} from './auth/auth.guard';
+import { UserComponent } from './user/user.component';
 import {OwnerCreateComponent} from './owner/owner-create/owner-create.component';
+import { ActivateComponent } from './auth/activate/activate.component';
 import { PetDetailsComponent } from './pet/pet-details/pet-details.component';
 
 @NgModule({
@@ -31,6 +33,10 @@ import { PetDetailsComponent } from './pet/pet-details/pet-details.component';
     LoginComponent,
     RegisterComponent,
     OurpetsComponent,
+    UserComponent,
+    OurpetsComponent,
+    OwnerCreateComponent,
+    ActivateComponent
     OwnerCreateComponent,
     PetDetailsComponent
   ],
