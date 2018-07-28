@@ -19,6 +19,7 @@ export const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'createowner', component: OwnerCreateComponent},
+
   {path: '**', component: ErrorComponent}
 ];
 
