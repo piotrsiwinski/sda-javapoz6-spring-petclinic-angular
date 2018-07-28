@@ -8,7 +8,7 @@ import {LoginComponent} from './auth/login/login.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {OurpetsComponent} from './ourpets/ourpets.component';
 import {AuthGuard} from './auth/auth.guard';
-import {UserComponent} from "./user/user.component";
+import {UserComponent} from './user/user.component';
 import {OwnerCreateComponent} from './owner/owner-create/owner-create.component';
 import {ActivateComponent} from './auth/activate/activate.component';
 

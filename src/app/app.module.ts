@@ -32,7 +32,7 @@ import { ActivateComponent } from './auth/activate/activate.component';
     LoginComponent,
     RegisterComponent,
     OurpetsComponent,
-    UserComponent
+    UserComponent,
     OurpetsComponent,
     OwnerCreateComponent,
     ActivateComponent
