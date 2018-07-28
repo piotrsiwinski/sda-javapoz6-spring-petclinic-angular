@@ -18,6 +18,7 @@ import { CookieService } from 'ngx-cookie-service';
 import {AuthService} from './auth/auth.service';
 import {AuthGuard} from './auth/auth.guard';
 import {OwnerCreateComponent} from './owner/owner-create/owner-create.component';
+import { ActivateComponent } from './auth/activate/activate.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {OwnerCreateComponent} from './owner/owner-create/owner-create.component'
     LoginComponent,
     RegisterComponent,
     OurpetsComponent,
-    OwnerCreateComponent
+    OwnerCreateComponent,
+    ActivateComponent
   ],
   imports: [
     BrowserModule,
