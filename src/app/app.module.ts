@@ -13,6 +13,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './auth/register/register.component';
+import { OurpetsComponent } from './ourpets/ourpets.component';
+import { CookieService } from 'ngx-cookie-service';
+import {AuthService} from './auth/auth.service';
+import {AuthGuard} from './auth/auth.guard';
+import { UserComponent } from './user/user.component';
+import {OwnerCreateComponent} from './owner/owner-create/owner-create.component';
+import { ActivateComponent } from './auth/activate/activate.component';
+import { PetDetailsComponent } from './pet/pet-details/pet-details.component';
 import { AddPetComponent } from './pet/add-pet/add-pet.component';
 
 @NgModule({
@@ -25,6 +33,14 @@ import { AddPetComponent } from './pet/add-pet/add-pet.component';
     OwnerDetailsComponent,
     LoginComponent,
     RegisterComponent,
+    OurpetsComponent,
+    UserComponent,
+    OurpetsComponent,
+    OwnerCreateComponent,
+    ActivateComponent,
+    OwnerCreateComponent,
+    PetDetailsComponent
+    RegisterComponent,
     AddPetComponent
   ],
   imports: [
@@ -34,7 +50,7 @@ import { AddPetComponent } from './pet/add-pet/add-pet.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [OwnerService],
+  providers: [OwnerService, CookieService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

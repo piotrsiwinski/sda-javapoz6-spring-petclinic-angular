@@ -1,0 +1,8 @@
+<div *ngIf="pet">
+
+  <span>{{pet.petType}}</span><br>
+    Birth date:<br>
+  <label type="date" ng-model="date">{{pet.birthDate | date:shortDate}} </label>
+
+</div>
+

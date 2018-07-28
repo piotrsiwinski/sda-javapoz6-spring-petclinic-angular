@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Owner} from '../owner';
 import {Router} from '@angular/router';
+import {Pet} from "../../pet/pet";
 
 @Component({
   selector: 'app-owner-details',
@@ -8,6 +9,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./owner-details.component.css']
 })
 export class OwnerDetailsComponent implements OnInit {
+  pets: Pet[];
+  selectedPet: Pet;
 
   @Input()
   owner: Owner;
@@ -21,6 +24,10 @@ export class OwnerDetailsComponent implements OnInit {
 
   onHideClick() {
     this.owner = null;
+  }
+
+  onPetClicked(pet: Pet) {
+    this.selectedPet = pet;
   }
 
   onAddNewPetClick() {

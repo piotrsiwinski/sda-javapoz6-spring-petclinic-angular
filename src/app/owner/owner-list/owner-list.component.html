@@ -1,11 +1,12 @@
-<h1>Owners</h1>
+<span class="size">  <img src="assets/img/pawlogo-login.png"> Owners </span>
+<br><br>
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <td>Imie</td>
-      <td>Nazwisko</td>
-      <td>Adres</td>
-      <td>Operacje</td>
+      <td>Name</td>
+      <td>Surname</td>
+      <td>Address</td>
+      <td>Descriptions</td>
     </tr>
   </thead>
   <tbody>
@@ -21,4 +22,4 @@
 </table>
 
 <app-owner-details [owner]="selectedOwner"></app-owner-details>
-<button (click)="createNewOwner()">Create test user</button>
+<button routerLink="/createowner">Create owner</button>
