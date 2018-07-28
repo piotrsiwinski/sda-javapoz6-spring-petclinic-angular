@@ -19,6 +19,11 @@
       </ul>
     </dd>
   </dl>
+  <button class="btn btn-success" (click)="onAddNewPetClick()">Add new pet</button>
+  <button class="btn btn-primary" (click)="onHideClick()">Hide</button>
+  <span *ngIf="showPetForm">
+    <app-add-pet [owner]="owner"></app-add-pet>
+  </span>
   <app-pet-details [pet]="selectedPet"></app-pet-details><br>
   <button class="btn btn-primary" (click)="onHideClick()">Hide owner</button>
 </div>
