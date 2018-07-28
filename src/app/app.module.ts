@@ -20,6 +20,7 @@ import {AuthGuard} from './auth/auth.guard';
 import { UserComponent } from './user/user.component';
 import {OwnerCreateComponent} from './owner/owner-create/owner-create.component';
 import { ActivateComponent } from './auth/activate/activate.component';
+import { PetDetailsComponent } from './pet/pet-details/pet-details.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { ActivateComponent } from './auth/activate/activate.component';
     UserComponent,
     OurpetsComponent,
     OwnerCreateComponent,
-    ActivateComponent
+    ActivateComponent,
+    OwnerCreateComponent,
+    PetDetailsComponent
   ],
   imports: [
     BrowserModule,
